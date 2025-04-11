@@ -2,6 +2,6 @@ package com.pluralsight;
 
 public class ShoppingList {
     public static void main(String[] args) {
-        System.out.println("Apples, Banana, Orange, Grape, Pencil, Notebook");
+        System.out.println("Apples, Books, Orange, Grape, Pencil, Notebook");
     }
 }

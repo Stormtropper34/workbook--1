@@ -13,9 +13,8 @@ public class SandwichShop {
         double basePrice = 0.00;
         double loadedPrice = 0.00;
         double finalPrice;
-        double finalLoadedPrice;
 
-
+// Select between regular and large 
         System.out.println("Select size of the sandwich: ");
         System.out.println("1: Regular: base price $5.45");
         System.out.println("2: Large: base price $8.95");
@@ -27,16 +26,14 @@ public class SandwichShop {
         } else if (selectSize == 2) {
             basePrice = 8.95;
         }
-
+// Asking user if they would like a loaded sandwich
         System.out.println("Would you like the sandwich loaded? (yes/no) ");
         String usersChoice = scanner.next();
         if (usersChoice.equals("yes")) {
             loadedPrice = (selectSize == 1) ? 1.00 : 1.75;
-        } else if (usersChoice.equals("no")) {
-            System.out.println("No added loaded sandwich");
         }
 
-
+// Users Age
         System.out.println("Enter age: ");
         double age = scanner.nextDouble();
 
@@ -45,22 +42,20 @@ public class SandwichShop {
         } else if (age >= 65) {
             discount = 0.20;
         } else {
-            System.out.println("No added discount: $" + basePrice);
+            System.out.println("No added discount");
         }
 
-
+// Calculation:
         finalPrice = (loadedPrice + basePrice) * (1 - discount);
-        finalLoadedPrice = (basePrice + loadedPrice);
 
+        if (loadedPrice > 0) {
+            System.out.println("The loaded percent: $" + loadedPrice);
+        }
+        if (discount > 0) {
+            System.out.println("Total discount: $" + (discount * 100 ));
 
-        if (discount > 0 && loadedPrice > 0) {
-            System.out.printf("The total price: $%.2f", finalPrice);
-        } else if (discount < 0 && loadedPrice < 0) {
-            System.out.println("Final price: $" + finalLoadedPrice);
         }
-        else {
-            System.out.println("Total price: $" + basePrice);
-        }
+        System.out.printf("Total is: $%.2f", finalPrice);
 
         scanner.close();
     }

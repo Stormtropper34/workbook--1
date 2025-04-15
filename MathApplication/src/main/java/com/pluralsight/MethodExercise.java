@@ -10,8 +10,6 @@ public class MethodExercise {
 
 
 
-
-
     }
     public static void brushTeeth() {
         System.out.println("How to brush your teeth: ");
